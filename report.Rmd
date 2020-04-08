@@ -1,0 +1,65 @@
+---
+title: "Learning Markdown"
+author: "Jose Barrero"
+date: "08/04/2020"
+output: html_document
+---
+
+# Title
+create some **bold** text or _italics_
+
+```
+a block of code
+```
+
+* bold with double asterisks
+* italics with underscores
+* code with 3 backticks
+
+
+1. bold with double asterisks
+2. italics with underscores
+3. code with 3 backticks
+
+## 2nd level header
+
+First code chunk
+
+```{r, echo=FALSE, message = TRUE, results = 'hide'}
+library(tidyverse)
+gapminder <- read_csv("data/gapminder.csv")
+
+```
+
+Second code chunk
+
+```{r, echo=TRUE, message = TRUE, results = 'hide'}
+gapminder %>%
+  filter(country == "Australia") %>%
+  ggplot(aes(x = pop, y = year)) +
+  geom_point()
+```
+
+
+Third code chunk
+
+```{r, echo=FALSE, message = TRUE, results = 'show'}
+aus_data <- filter(gapminder, country == "Australia")
+aus_data
+```
+
+
+### 3rd level header
+
+[Link to these notes](https://csiro-data-school.github.io/rmarkdown/)
+
+You can do subscripts with F~subscripts~ and superscripts with F^superscripts^
+
+Sentence that requires a footnote [^1].
+
+[^1]: Footnote text
+
+
+
+
+
